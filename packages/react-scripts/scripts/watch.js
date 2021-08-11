@@ -36,6 +36,7 @@ const webpack = require('webpack');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const paths = require('../config/paths');
 const configFactory = require('../config/webpack.config');
+const printBuildError = require('react-dev-utils/printBuildError');
 
 const isInteractive = process.stdout.isTTY;
 

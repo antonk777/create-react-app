@@ -31,6 +31,7 @@ const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
 verifyTypeScriptSetup();
 // @remove-on-eject-end
 
+const fs = require('fs-extra');
 const chalk = require('react-dev-utils/chalk');
 const webpack = require('webpack');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
@@ -51,7 +52,18 @@ const { checkBrowsers } = require('react-dev-utils/browsersHelper');
 
 checkBrowsers(paths.appPath, isInteractive)
   .then(() => {
+    // Generate configuration
     const config = configFactory('development');
+
+    // Remove all content but keep the directory so that
+    // if you're in it, you don't end up in Trash
+    fs.emptyDirSync(paths.appBuild);
+
+    // Merge with the public folder
+    fs.copySync(paths.appPublic, paths.appBuild, {
+      dereference: true,
+      filter: file => file !== paths.appHtml
+    });
 
     let i = 0;
 

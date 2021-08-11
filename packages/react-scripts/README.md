@@ -1,4 +1,6 @@
-# react-scripts
+# overwolf-react-scripts
+
+This is a fork of react-scripts that adds a Watch script for easier development within Overwolf
 
 This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
 Please refer to its documentation:

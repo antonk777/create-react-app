@@ -193,6 +193,7 @@ module.exports = function (
     {
       start: 'react-scripts start',
       build: 'react-scripts build',
+      watch: 'react-scripts watch',
       test: 'react-scripts test',
       eject: 'react-scripts eject',
     },

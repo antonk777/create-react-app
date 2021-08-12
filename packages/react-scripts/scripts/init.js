@@ -375,6 +375,9 @@ module.exports = function (
   console.log(chalk.cyan(`  ${displayedCommand} start`));
   console.log('    Starts the development server.');
   console.log();
+  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}watch`));
+  console.log('    Watches and rebuilds the app as when files change.');
+  console.log();
   console.log(
     chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`)
   );
